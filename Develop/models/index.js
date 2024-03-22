@@ -11,7 +11,7 @@ Product.belongsTo(Category, {
 });
 
 // Categories have many Products
-Category.haveMany(Product, {
+Category.hasMany(Product, {
   foreignKey: 'category_id',
 });
 
@@ -23,7 +23,7 @@ Product.belongsToMany(Tag, {
     unique: false
   },
   // Define an alias for when data is retrieved
-  as: 'product_tag'
+  as: 'product_id'
 });
 
 // Tags belongToMany Products (through ProductTag)
@@ -34,7 +34,7 @@ Tag.belongsToMany(Product, {
     unique: false
   },
   // Define an alias for when data is retrieved
-  as: 'product_tag'
+  as: 'tag_id'
 });
 
 module.exports = {
